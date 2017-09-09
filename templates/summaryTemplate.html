@@ -1,24 +1,11 @@
 {% raw %}
 <script id="summaryTemplate" type="x-tmpl-mustache">
 
-                {{#data}}
-                  <tr>
-                <th scope="row"><input type="checkbox"></th>
-                    <td>{{.}}</td>
-                    <td><button type="button" class="btn btn-link btn-sm deleteBtn" data-path="{{.}}">Remove</button></td>
-                    </tr>
-                {{/data}}
+     {{#data}}
 
+    <li>{{.}}&nbsp;<a class="deleteBtn" href="" data-path="{{.}}">remove</a></li>
 
-
-
-
-
-
-
-
-
-
+     {{/data}}
 
 </script>
 {% endraw %}

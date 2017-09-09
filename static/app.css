@@ -1,12 +1,23 @@
- .header {
-            min-height: 56px;
-            background: #007bff;
-        }
-        .codebox{
-            max-width:150px;
-            max-height:150px;
-            overflow :scroll;
-        }
-        .match{
-            background-color:yellow;
-        }
+.mybox {
+    margin: 10px;
+    border-radius: 5px;
+}
+.mybox p {
+    margin: 10px;
+}
+.codebox {
+    max-height: 204px;
+    max-width:99%;
+    overflow: scroll;
+    background-color: #f5f5f5;
+    padding: 12px;
+}
+.match {
+    background-color: yellow;
+}
+.f11 {
+    font-size: 11px;
+}
+.search-bar{
+    padding:10px;
+}

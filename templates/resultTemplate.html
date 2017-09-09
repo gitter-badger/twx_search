@@ -1,21 +1,11 @@
 {% raw %}
 <script id="resultTemplate" type="x-tmpl-mustache">
                 {{#data}}
-                 <tr>
-                        <th scope="row">{{ app }}</th>
-                        <td>{{ item_name}}</td>
-                        <td><pre  class="codebox">{{{ snippet }}}<pre></td>
-                    </tr>
+                 <li>
+                        <div><b>Service name</b> : {{ item_name}}</div>
+                        <div><b>Application</b> : {{ app }}</div>
+                        <div><pre  class="codebox">{{{ snippet }}}<pre></div>
+                    </li>
                 {{/data}}
-
-
-
-
-
-
-
-
-
-
 </script>
 {% endraw %}

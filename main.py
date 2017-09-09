@@ -194,7 +194,7 @@ def search_text(query):
     qp = QueryParser(ITEM_CONTENT, schema=Mydocument())
     q1 = qp.parse(query)
     with oix.searcher() as s:
-        results = s.search(q1, limit=100)
+        results = s.search(q1, limit=500)
         print(results.is_empty())
         results.fragmenter.maxchars = 300
         results.fragmenter.surround = 300

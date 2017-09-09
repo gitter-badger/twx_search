@@ -3,125 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>TWX Search</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-          crossorigin="anonymous">
-    <style>
-         .header {
-            min-height: 56px;
-            background: #007bff;
-        }
-         .header h3 {
-            color: #fff;
-            font-weight: bold;
-        }
-        .bar1{
-           padding :10px;
-        }
-        .mybox{
-            margin:10px;
-            border-radius:5px;
-        }
-        .mybox p{
-            margin:10px;
-        }
-.codebox{
-               max-width: 400px;
-    max-height: 204px;
-    overflow: scroll;
-    background-color: #f5f5f5;
-    padding: 12px;
-        }
-        .match{
-            background-color:yellow;
-        }
-
-
-
-
-
-
-
-
-
-
-
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/app.css">
     </style>
 </head>
 <body>
-<div class="header d-flex flex-row align-items-center">
-    <h3 class="p-2 align-self-center">TWX Search</h3>
-</div>
+
 <div class="container">
-    <div class="row bar1">
-        <div class="col">
-            <input type="text" class="form-control" id="importPath">
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-primary" id="importBtn">Import twx file</button>
-        </div>
+    <div class="border mybox">
+
+        <p class="f11"><b>Applications</b>&nbsp;
+            <a class="reloadBtn" href="">reload list</a>&nbsp;|&nbsp;<a id="importBtn" href="">import twx</a>
+        </p>
+        <ol class="f11">
+        <div id="summary"></div>
+    </ol>
+<p class="f11">Now indexing <span id="counter">0 files ...</span></p>
+
     </div>
     <div class="border mybox">
-        <p>Now indexing <span id="counter">0 files</span></p>
-        <div class="row">
+        <div class="row search-bar">
             <div class="col">
-                <table class="table">
-                    <thead class="thead-default">
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>Application</th>
-                        <th>
-                            <button type="button" class="btn btn-link btn-sm" id="reloadBtn">Reload</button>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody id="summary">
-                    {% include 'summaryTemplate.html' %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="border mybox">
-        <div class="row bar1">
-            <div class="col">
-                <input type="text" class="form-control" id="q">
+                <input type="text" class="form-control form-control-sm" id="q">
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary" id="searchBtn">Search</button>
+                <button type="button" class="btn btn-primary btn-sm" id="searchBtn">Search</button>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <table class="table">
-                    <thead class="thead-default">
-                    <tr>
-                        <th>Application</th>
-                        <th>Component</th>
-                        <th>Snippet</th>
-                    </tr>
-                    </thead>
-                    <tbody id="result">
-                    {% include 'resultTemplate.html' %}
-
-                    </tbody>
-                </table>
+            <div class="col f11">
+                <ol id="result"></ol>
             </div>
         </div>
     </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
+  {% include 'summaryTemplate.html' %}
+   {% include 'resultTemplate.html' %}
+<script src="static/mustache.min.js"></script>
+<script src="static/jquery-3.2.1.min.js"></script>
+<script src="static/popper.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
 <script src="static/app.js"></script>
 </body>
 </html>

@@ -21,8 +21,13 @@ function reloadSummary(){
 }
 
 function importApp(){
-    var value = $('#importPath').val()
-    $.get('/importApp',{twxpath : value},function(res){ console.log(res)})
+    var value = prompt("Please provide twx file path:", "c:\\Users\\a.twx");
+    if (value == null || value == "") {
+      ;
+    } else {
+        alert('file added to queue for processing')
+        $.get('/importApp',{twxpath : value},function(res){ console.log(res)})
+    }
 }
 
 function search(){
